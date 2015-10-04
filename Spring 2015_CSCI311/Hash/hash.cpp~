@@ -1,0 +1,187 @@
+/*
+Name: Akshay Joshi
+Chico Stat ID:006768243
+Description: This program builds all the hash functions that are required to build hash tables
+Citation:http://www.cplusplus.com/doc/tutorial/files/
+*/
+
+#include<stdio.h>
+#include<iostream>
+#include<iomanip>
+#include <string.h>
+#include<fstream>
+#include"hash.h"
+using namespace std;
+
+Hash :: Hash()
+{
+	collisions =0;
+	longestList=0;
+	avgLength=0;
+	load=0;
+
+}
+/*
+process file takes in the file name as a string of the file which is to be processed and reads the words individuly.
+We also find the number of collisions and longest list in hash.
+*/
+void Hash::processFile(string name)
+{
+	int index;										//  int variable to get the index from hash function
+	int temp = 0, temp2 = 0;								// for counting the longestlist we compare two elements
+	ifstream filein(name.c_str());
+	string word;
+	if (filein.is_open())
+	{
+		while (getline(filein, word))
+		{
+			index = hf(word);																		// calls the hash function
+			hashTable[index].push_back(word);
+			avgLength = (avgLength + averagecal()) / 2.0;				// takes average for successful addition
+		}
+		filein.close();
+	}
+												//procedure for collisions and length of longest bucket
+	list < string > ::iterator itr;
+	int i=0;
+	while(i< HASH_TABLE_SIZE)
+	{
+		itr = hashTable[i].begin();
+		while(itr != hashTable[i].end())
+		{
+			collisions++;								// keep on counting the number of elements added on each table
+			temp2++;								// temp2 counts number of element in each list
+			itr++;
+		}
+		if (temp2 >= temp)
+		{
+			temp = temp2;								// if greater than the value stored then it replaces temp with temp2
+		}
+		temp2 = 0;									// sets temp2 to 0 for next pass of counting the list
+		i++;
+	}
+	int number_of_elements=0;
+	number_of_elements=collisions;
+	load= ((number_of_elements)/(HASH_TABLE_SIZE));///HASH_TABLE_SIZE);
+	collisions = collisions - HASH_TABLE_SIZE;						// this subtracts the value hash table that gets added
+	longestList = temp;
+}
+
+/*Remove function this function takes in string name to compare with the the strings stored in hash table.
+Once it finds the element it deletes the data by.erase function*/
+
+void Hash::remove(string key)
+{
+	list < string > ::iterator i;
+		int j=0;
+		while(j< HASH_TABLE_SIZE)
+		{
+			i = hashTable[j].begin();
+			while(i!=hashTable[j].end())
+			{
+				if (key == *i)
+				{
+					hashTable[j].remove(key);											// when it finds data it deletes it
+					avgLength = (avgLength + averagecal()) / 2.0;			// takes instantious average for successful removal
+					break;
+				}
+				i++;
+			}
+			j++;
+		}
+}
+
+/*The print function prints entire table the first for loop traverses through the index
+the next for loop traverses through the list and prints the elements*/
+
+void Hash::print()
+{
+	list < string > ::iterator itr;
+	int size=0;
+	while(size<HASH_TABLE_SIZE)						// this loop traverses through the index
+	{
+		cout << size <<":\t";
+		itr = hashTable[size].begin();
+		while(itr!=hashTable[size].end())
+		{
+			cout << *itr<<", ";							// prints the function
+			itr++;
+		}
+		cout << "\n";
+	size++;
+	}
+}
+
+/*This is the search function it takes the string passed by main function and it comparesit with every word by traversing through the whole list*/
+
+bool Hash::search(string name)
+{
+	bool flag=false;									// we intialize a boolean flag as false so that if string not found
+	list < string > ::iterator itr;								// it will return false
+	//for (int i = 0; i < HASH_TABLE_SIZE; i++)						// for traversing in the index values
+	int i=0;
+	do{
+			// (itr = hashTable[i].begin(); ; itr++)		// for traversing through list
+			itr = hashTable[i].begin();
+			while(itr != hashTable[i].end())
+			{
+				if (*itr==name)
+				{
+					flag=true;							// we set it true only ifwe find the string
+				}
+				itr++;
+			}
+			i++;
+	}while(i < HASH_TABLE_SIZE);
+	return flag;										// return the bool value to the main
+}
+
+
+/*This function takes string of filename and then creates output with the name hash.out, again it uses two for loops for traversing the data*/
+
+void Hash::output(string)
+{
+	{
+		ofstream fileout;								//do the ofstream commond for creating file
+		fileout.open("hash.out");
+		{
+			list < string > ::iterator itr;
+			//for (int i = 0; i < HASH_TABLE_SIZE; i++)				// this for loop is for traversing throug the index
+			int size=0;
+			while(size<HASH_TABLE_SIZE)
+			{
+				fileout << size << ":\t";
+				for (itr = hashTable[size].begin(); itr != hashTable[size].end(); itr++)	// this for loop is for traversing through the link
+				{
+					fileout << *itr << ", ";
+				}
+				fileout << endl;							//giving out the output
+				size++;
+			}
+		}
+		fileout.close();									// closing the file to which the data is written
+	}
+}
+/*This function gets the average of the values it takes the total average and returns avg for successfull addition and deletion*/
+double Hash::averagecal()
+{
+	double total = 0, avg = 0;
+	int itre=0;
+	while(itre<HASH_TABLE_SIZE)
+	{
+		total =total+ hashTable[itre].size();
+		itre++;
+	}
+	avg = total / HASH_TABLE_SIZE;
+	return avg;
+}
+
+
+void Hash::printStats()
+{
+
+	cout << "Total Collisions = " << collisions;						// print the stats
+	cout << "\nLongest List Ever = " << longestList;
+	cout << "\nAverage List Length Over Time = "<< avgLength;
+	cout << "\nLoad Factor = "<< load << endl;
+}// print statistics

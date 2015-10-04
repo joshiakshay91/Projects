@@ -1,0 +1,158 @@
+insert 11/12 Mom & dad’s Anniversary
+insert 11/12 Dinner at jacks
+insert 4/28 Spring fling
+insert 04/01 April Fool’s Day
+insert 03/14 Jen’s birthday
+insert 01/20 School Starts
+insert 11/12 Mom & dad’s Anniversary
+insert 11/12 Dinner at jacks
+insert 4/28 Spring fling
+insert 04/01 April Fool’s Day
+insert 03/14 Jen’s birthday
+insert 01/20 School Starts
+insert 11/12 Mom & dad’s Anniversary
+insert 11/12 Dinner at jacks
+insert 4/28 Spring fling
+insert 04/01 April Fool’s Day
+insert 03/14 Jen’s birthday
+insert 01/20 School Starts
+print
+delete 11/12 Mom & dad’s Anniversary
+delete 11/12 Dinner at jacks
+delete 4/28 Spring fling
+delete 04/01 April Fool’s Day
+delete 03/14 Jen’s birthday
+delete 01/20 School Starts
+print
+print
+insert nil nil
+insert nil nil
+print
+print
+delete nil nil
+print
+delete nil nil
+insert 01 01
+insert 01 02
+insert 01 03
+insert 44 44
+insert 55 55
+insert 65 75
+insert 45 45
+insert 01 01
+insert 01 01
+insert 02 02
+insert 20 20
+insert 25 25
+insert 35 35
+insert 01 01
+insert 01 01
+insert 100 11
+print
+find 01
+insert 100 100
+insert 99 99
+insert 01 01
+insert 01 33
+insert 02 02
+insert 33 33
+insert 35 35
+insert 01 01
+insert 01 01
+insert 01 01
+insert 02 02
+insert 02 02
+find 01
+insert 05 05
+insert 05 05
+insert 06 06
+insert something something 
+insert 07 07
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+print
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 05 05
+insert 44 44
+insert 55 55
+insert 65 75
+insert 44 44
+insert 55 55
+insert 65 75
+insert 44 44
+insert 55 55
+insert 65 75
+insert 44 44
+insert 55 55
+insert 65 75
+insert 44 44
+insert 55 55
+insert 65 75
+print
+find 00
+find ff
+find 44
+find district
+print
+insert district district
+mistypes
+spelling mistakes
+find spelling mistakes
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+insert 01 01
+print
+delete 44 44
+print
+delete 55 55
+print
+delete 65 75
+print
+delete 01 01
+print

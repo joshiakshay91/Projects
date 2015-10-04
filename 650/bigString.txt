@@ -1,0 +1,24 @@
+
+Suffix Array:
+index: 21 	string: $abaababaabaababaababa	LCP: 0
+index: 20 	string: a$abaababaabaababaabab	LCP: 0
+index: 7 	string: aabaababaababa$abaabab	LCP: 1
+index: 15 	string: aababa$abaababaabaabab	LCP: 4
+index: 2 	string: aababaabaababaababa$ab	LCP: 6
+index: 10 	string: aababaababa$abaababaab	LCP: 9
+index: 18 	string: aba$abaababaabaababaab	LCP: 1
+index: 5 	string: abaabaababaababa$abaab	LCP: 3
+index: 13 	string: abaababa$abaababaabaab	LCP: 6
+index: 0 	string: abaababaabaababaababa$	LCP: 8
+index: 8 	string: abaababaababa$abaababa	LCP: 11
+index: 16 	string: ababa$abaababaabaababa	LCP: 3
+index: 3 	string: ababaabaababaababa$aba	LCP: 5
+index: 11 	string: ababaababa$abaababaaba	LCP: 8
+index: 19 	string: ba$abaababaabaababaaba	LCP: 0
+index: 6 	string: baabaababaababa$abaaba	LCP: 2
+index: 14 	string: baababa$abaababaabaaba	LCP: 5
+index: 1 	string: baababaabaababaababa$a	LCP: 7
+index: 9 	string: baababaababa$abaababaa	LCP: 10
+index: 17 	string: baba$abaababaabaababaa	LCP: 2
+index: 4 	string: babaabaababaababa$abaa	LCP: 4
+index: 12 	string: babaababa$abaababaabaa	LCP: 7
